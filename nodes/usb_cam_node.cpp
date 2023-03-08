@@ -90,10 +90,10 @@ public:
 
     // grab the parameters
     node_.param("video_device", video_device_name_, std::string("/dev/video0"));
-    node_.param("brightness", brightness_, -1); //0-255, -1 "leave alone"
-    node_.param("contrast", contrast_, -1); //0-255, -1 "leave alone"
-    node_.param("saturation", saturation_, -1); //0-255, -1 "leave alone"
-    node_.param("sharpness", sharpness_, -1); //0-255, -1 "leave alone"
+    node_.param("brightness", brightness_, 128); //0-255, -1 "leave alone"
+    node_.param("contrast", contrast_, 128); //0-255, -1 "leave alone"
+    node_.param("saturation", saturation_, 128); //0-255, -1 "leave alone"
+    node_.param("sharpness", sharpness_, 128); //0-255, -1 "leave alone"
     // possible values: mmap, read, userptr
     node_.param("io_method", io_method_name_, std::string("mmap"));
     node_.param("image_width", image_width_, 640);
@@ -107,9 +107,9 @@ public:
     node_.param("autofocus", autofocus_, false);
     node_.param("focus", focus_, -1); //0-255, -1 "leave alone"
     // enable/disable autoexposure
-    node_.param("autoexposure", autoexposure_, true);
+    node_.param("autoexposure", autoexposure_, false);
     node_.param("exposure", exposure_, 100);
-    node_.param("gain", gain_, -1); //0-100?, -1 "leave alone"
+    node_.param("gain", gain_, 0); //0-100?, -1 "leave alone"
     // enable/disable auto white balance temperature
     node_.param("auto_white_balance", auto_white_balance_, true);
     node_.param("white_balance", white_balance_, 4000);
